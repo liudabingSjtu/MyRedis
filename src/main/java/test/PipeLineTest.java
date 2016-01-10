@@ -1,7 +1,10 @@
+package test;
+
 import org.junit.Before;
 import org.junit.Test;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.Pipeline;
+import src.JedisPoolUtile;
 
 import java.util.Date;
 
@@ -26,7 +29,7 @@ public class PipeLineTest {
         }
         Date end = new Date();
         System.out.println(end.getTime() - start.getTime());
-        //十万条写记录耗时10697
+        //Takes 10697
     }
 
     @Test
@@ -39,6 +42,6 @@ public class PipeLineTest {
         pipeline.syncAndReturnAll();
         Date end = new Date();
         System.out.println(end.getTime() - start.getTime());
-        //耗时332ms
+        //Takes 332ms
     }
 }

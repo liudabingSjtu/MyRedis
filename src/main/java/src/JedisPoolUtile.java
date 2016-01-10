@@ -1,4 +1,4 @@
-/**
+package src; /**
  * Created by bing on 2016/1/10.
  */
 import redis.clients.jedis.Jedis;
@@ -10,31 +10,31 @@ public class JedisPoolUtile {
     private static JedisPool pool;
 
     /**
-     * ½¨Á¢Á¬½Ó³Ø ÕæÊµ»·¾³£¬Ò»°ã°ÑÅäÖÃ²ÎÊýÈ±³éÈ¡³öÀ´¡£
+     * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó³ï¿½ ï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã²ï¿½ï¿½ï¿½È±ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
      *
      */
     private static void createJedisPool() {
 
-        // ½¨Á¢Á¬½Ó³ØÅäÖÃ²ÎÊý
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó³ï¿½ï¿½ï¿½ï¿½Ã²ï¿½ï¿½ï¿½
         JedisPoolConfig config = new JedisPoolConfig();
 
-        // ÉèÖÃ×î´óÁ¬½ÓÊý
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         config.setMaxTotal(100);
 
 
-        // ÉèÖÃ×î´ó×èÈûÊ±¼ä£¬¼Ç×¡ÊÇºÁÃëÊýmilliseconds
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ä£¬ï¿½ï¿½×¡ï¿½Çºï¿½ï¿½ï¿½ï¿½ï¿½milliseconds
         config.setMaxWaitMillis(1000);
 
-        // ÉèÖÃ¿Õ¼äÁ¬½Ó
+        // ï¿½ï¿½ï¿½Ã¿Õ¼ï¿½ï¿½ï¿½ï¿½ï¿½
         config.setMaxIdle(10);
 
-        // ´´½¨Á¬½Ó³Ø
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó³ï¿½
         pool = new JedisPool(config, "192.168.159.130", 6379);
 
     }
 
     /**
-     * ÔÚ¶àÏß³Ì»·¾³Í¬²½³õÊ¼»¯
+     * ï¿½Ú¶ï¿½ï¿½ß³Ì»ï¿½ï¿½ï¿½Í¬ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½
      */
     private static synchronized void poolInit() {
         if (pool == null)
@@ -42,7 +42,7 @@ public class JedisPoolUtile {
     }
 
     /**
-     * »ñÈ¡Ò»¸öjedis ¶ÔÏó
+     * ï¿½ï¿½È¡Ò»ï¿½ï¿½jedis ï¿½ï¿½ï¿½ï¿½
      *
      * @return
      */
@@ -54,7 +54,7 @@ public class JedisPoolUtile {
     }
 
     /**
-     * ¹é»¹Ò»¸öÁ¬½Ó
+     * ï¿½é»¹Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
      *
      * @param jedis
      */
